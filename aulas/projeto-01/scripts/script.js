@@ -36,3 +36,23 @@ total = preco * quantidade;
 
 console.log(nome + "pediu" + quantidade + " " + nomeCafe);
 console.log("O total a pagar e de " + total + "escudos.");
+
+// ==========================================================================
+// Aula 2 - Operadores e Estruturas de Controlo
+// A caixa do café morabesa 
+// ==========================================================================
+
+const aluno ="Vanessa";
+
+console.log(`O nome do aluno é: ${aluno}`); // o nome do aluno e: vanessa
+
+const precoCafe = 40.5;
+const precoCapuccino = 50;
+
+console.log(`A soma dos dois: ${precoCafe + precoCapuccino} `);
+console.log(`Subtraindo: ${precoCapuccino - precoCafe}`);
+console.log(`O preco de tres cafes e: ${precoCafe * 3}`);
+console.log(`Black friday preco do cafe pela metade: ${precoCafe / 2}`);
+
+console.log(`O resto de divisão: ${precoCafe % 2}`);
+console.log(`Exponencial: ${precoCafe ** 2}`);
