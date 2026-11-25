@@ -110,3 +110,127 @@ let valorPago2 = 50;
 console.log(valorPago2 === precoCapuccino);
 
 console.log(`o troco e de: ${valorPago2 - precoCapuccino}`);
+
+// Operadores Logicos
+
+const age = 18;
+const genero = "m";
+
+console.log(10 > 5 && 10 > 14); // true && false = false
+console.log(age >= 18 && genero === "m"); // true && true = true
+
+const temCartaoFidelidade = true;
+const temCuponDesconto = false;
+
+console.log(temCartaoFidelidade || temCuponDesconto); // true || false = true
+console.log(!temCartaoFidelidade ); // !true => false
+
+// Estruturas de controlo
+
+// Decisores
+
+/*
+   if - se
+   else - senao
+   else if - senao se
+   switch - escolha ou casos
+
+   Se (consicao for verdadeira) entao {
+       // faça isto 
+   }  senao entao {
+       // faça aquilo
+   }  senao se (outra condicao for verdadeira) entao {
+       // faça isto
+   }
+
+   se idade for maior do que 18 entao
+       // pode entra no churasco
+   senao se estiver acompanhado de um respomsavel entao
+       // pode entrar no churasco
+   senao 
+       // nao pode entrar no churasco
+
+*/ 
+
+if (age >= 18) {
+    console.log("e maior de idade");
+} else {
+    console.log("nao e maior de iade");
+}
+
+if (age >= 18 && genero === "m") {
+    console.log("el eh grande e matxo");
+} else if (age >= 18 && genero === "f"); {
+    console.log("el eh grande e femia");
+} 
+
+/*
+   switch (nacionalidade)
+   case: "cv"
+      console.log("kualeh nha mano")
+      break
+   case: "pt"
+      console.log("como estas")
+      break
+   case: "gui"
+      console.log("eh cuman de corpo")
+      break
+   case: "sen"
+      console.log("na nga def")
+      break
+   default:
+      console.log("agh kz mo stau")
+
+
+ */
+
+const nacionalidade = "gui";
+
+ switch (nacionalidade) {
+   case "cv":
+      console.log("kualeh nha mano");
+      break;
+   case "pt":
+      console.log("como estas");
+      break;
+   case "gui":
+      console.log("eh cuman de corpo");
+      break;
+   case "sen":
+      console.log("na nga def");
+      break;
+   default:
+      console.log("agh kz mo stau");
+ }      
+
+ // Ciclos
+
+ // for -> usamos quando soubermos exatamente quantas vezes queremos que o 
+ // ciclo rode
+
+ for (let i = 1; i <= 5; i++) {
+    console.log(`cliente numero ${i}`);
+ }
+
+ let precoTemp = 90;
+ for (let quantidade = 1; quantidade <= 5; quantidade++) {
+    console.log(`${quantidade} cafes custam : ${precoTemp * quantidade}`);
+ }
+
+ // contador que conta de 10 a 04
+ for (let i = 10; i >= 0; i--) {
+    console.log(`Tempo restante : ${i}`);
+ }
+
+ // while -> quando nao sobemos exatamente quantas vezes queremos que o 
+ // ciclo rode
+
+ const precoMoinho = 5000;
+ const poupancaDiaria = 100;
+ let totalPoupado = 0;
+ let dia = 0;
+
+ while (totalPoupado <= precoMoinho) {
+   totalPoupado += poupancaDiaria;
+   dia++;
+ }

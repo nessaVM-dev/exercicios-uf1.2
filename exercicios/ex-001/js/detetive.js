@@ -5,10 +5,11 @@
 // ==========================================================================
 
 const nomeLoja = "Mercearia da Tia Lena";
+
 let nomeProduto = "Arroz";
 let precoQuilo = 150;
-
 let doisquilos = precoQuilo * 2;
+
 console.log(`${nomeLoja}: ${nomeProduto} a ${precoQuilo} escudos o quilo.`);
 
 let stock = 40;
