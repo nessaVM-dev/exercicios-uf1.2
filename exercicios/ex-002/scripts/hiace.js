@@ -2,47 +2,88 @@
 // A Hiace para o Interior
 // ==========================================================================
 
-const destinoCodigoTexto = prompt("Escolha o destino:\n1 - Assomada\n2 - Tarrafal\n3 - Pedra Badejo\n4 - Cidade Velha");
+const codigo = prompt("Escolha o destino: 1 - Assomada, 2 - Tarrafal, 3 - Pedra Badejo, 4 - Cidade Velha");
 
-const destinoCodigo = Number(destinoCodigoTexto);
+let destino = "";
+let preco = 0;
 
-let destino;
-let preco;
-
-switch (destinoCodigo) {
-    case 1: 
+switch (codigo) {
+    case "1": 
        destino = "Assomada";
        preco = 250;
        break
 
-    case 2:
+    case "2":
         destino = "Tarrafal";
         preco = 500;
         break;
     
-    case 3:
+    case "3":
         destino = "Pedra Badejo";
         preco = 200;
         break;
-    case 4:
+    case "4":
         destino = "Cidade Velha";
         preco = 100;
         break;
+
     default:
         console.log("Esse destino não existe.");
 
 }
 
-if (destino !== undefined) {
-    const indadeTexto = prompt("Qual é a idade do passageiro");
-    const idade = Number(indadeTexto);
+if (destino === "") {
+   console.log("Esse destino não existe.");
+} 
 
-    const horaTexto = prompt("Qual é a hora da viagem (0 a 23)?");
-    const hora = Number(horaTexto);
+const idade = Number(prompt("Qual é a idade do passageiro?"));
+const hora = Number(prompt("Qual é a hora da viagem? (0 a 23)"));
+const bagagem = prompt("Leva bagagem grande? (s/n)");
 
-    const bagagem = prompt("Leva bagagem grande? (s/n)");
 
-    if (
+if (
+    Number.isNaN(idade) || 
+    idade < 0 ||
+    Number.isNaN(hora) ||
+    hora < 0 ||
+    hora > 23 ||
+    (bagagem !== "s" && bagagem !== "n")
 
-    )
+) {
+    console.log("Os dados introduzidos não são válidos.");
 }
+
+let tarifa = "Normal";
+let total = preco;
+
+if (idade < 5) {
+    tarifa = "Grátis";
+    total = 0;
+} else if (idade < 12 || idade >= 65) {
+    tarifa = "Metade do preço";
+    total = preco / 2;
+}
+
+
+if (bagagem === "s") {
+    total += 100;
+}
+
+const noturna = hora >= 19 || hora < 6;
+
+if (noturna) {
+    total += 50;
+}
+
+console.log(`Destino: ${destino}`);
+console.log(`Hora da viagem: ${hora} horas`);
+console.log(`Tarifa: ${tarifa}`);
+
+if (bagagem === "s") {
+    console.log("Bagagem grande: Sim");
+} else {
+    console.log("Bagagem grande: Não");
+}
+
+console.log(`Viagem noturna: ${noturna}`);
+console.log(`Total a pagar: ${total} escudos`);

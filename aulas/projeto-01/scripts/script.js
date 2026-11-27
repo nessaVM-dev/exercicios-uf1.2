@@ -234,3 +234,127 @@ const nacionalidade = "gui";
    totalPoupado += poupancaDiaria;
    dia++;
  }
+
+ // Funcoes
+
+ function saudar() {
+   console.log("ola, bem-vindo ao cafe Morabeza");
+ }
+
+ saudar(); // chamar a funcao e executar o codigo
+
+ let nomeCliente;
+ 
+ function receberNomeDoCliente(nome) {
+   nomeCliente = nome;
+
+ }
+
+ function saudarNovoCliente() {
+   console.log(`ola ${nomeCliente}, bem-vindo ao cafe Morabeza`);
+ }
+
+ receberNomeDoCliente("Tiago");
+ saudarNovoCliente();
+
+ function calcularDesconto(quantidade, temCartao) {
+   let desconto = 0;
+
+   if (quantidade >= 10) {
+      desconto = 15;
+   } else if (quantidade >= 5) {
+      desconto = 10;
+   }
+
+   if (temCartao) {
+      desconto += 5;
+   }
+
+   return desconto;
+ }
+
+ const valorDeDesconto = calcularDesconto(15, false); // variavel valorDeDesconto recebe o valor de retorno da funcao (ex: 15)
+
+ console.log(`Desconto calculado: ${valorDeDesconto}`);
+
+ function aplicarDesconto(subtotal, desconto) {
+   let valorFinal;
+
+   valorFinal = subtotal - (subtotal * desconto);
+
+   return valorFinal;
+ }
+
+ let totalAPagar = aplicarDesconto(150, valorDeDesconto);
+
+ console.log(`o valor final a pagar é de: ${totalAPagar} ECV`);
+
+ function nomeDaFuncao(parametro) {
+   //corpo da funcao
+   //retorno da funcao
+ }
+
+ const nomeDaArrowFuncao = (parametro) => {
+   //corpo da funcao
+   //retorno da funcao
+   console.log(parametro);
+ }
+
+ nomeDaArrowFuncao("parametro");
+
+// Arrays
+
+const produtos = [
+   "Cafe",
+   "Capuccino",
+   "Mocha",
+   "Ice Tea",
+   "Sopa"
+];
+
+console.log(produtos);
+console.log(produtos[2]);
+
+const alunos = [
+   {
+      nome: "Leandro",
+      morada: "Vila Nova",
+   },
+
+   {
+      nome: "Vanessa",
+      morada: "Safende",
+   },
+
+   {
+      nome: "Daniela",
+      morada: "Vila calmo",
+   },
+
+   {
+      nome: "Tiza",
+      morada: "barral d street",
+   }
+];
+
+alunos.push({
+   nome: "Janine",
+   morada: "Bairo Craveiro Lopes"
+});
+
+alunos[3].morada = "Txadinha Street";
+
+for (let i = 0; i < alunos.length; i++) {
+   console.log(alunos[i]);
+}
+
+console.log(alunos);
+
+// Objetos
+
+const estudante = {
+   nome: "Leandro",
+   morada: "Vila Nova",
+   id: 1313,
+   turno: "Manhã"
+};
